@@ -93,6 +93,11 @@ a.category-badge >span.badge:hover {
     cursor: pointer;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 
 /* ----------------------------------------Media Queries */
 

@@ -12,9 +12,8 @@ class OrderForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Add place-holders and classes,
-        remove auto-generated labels
-        and set auto-focus on 1st field
+        Add placeholders and classes, remove auto-generated
+        labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
         placeholders = {
@@ -36,5 +35,5 @@ class OrderForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'stripe.style.input'
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False

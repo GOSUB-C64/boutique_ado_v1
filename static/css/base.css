@@ -7,10 +7,10 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Lato'
+    font-family: 'Lato';
 }
 
-/* from Bulma  */
+/* from Bulma */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -39,9 +39,16 @@ body {
 }
 
 .btn-outline-black {
-    background: #fff;
-    color: black !important; /* use '!important' to over-ride link colours for <a> elements */
-    border: 1px black solid;
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
 }
 
 .shop-now-button:hover,
@@ -55,7 +62,7 @@ body {
 }
 
 .text-black {
-    color: black !important;
+    color: #000 !important;
 }
 
 .border-black {
@@ -67,44 +74,41 @@ body {
 }
 
 .overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: #fff;
-    z-index: -1;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
 }
 
-a.category-badge >span.badge:hover {
+a.category-badge > span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
 }
 
 .btt-button {
-    width: 42px;
     height: 42px;
+    width: 42px;
     position: fixed;
     bottom: 10px;
     right: 10px;
 }
 
-.btt-link {
-    cursor: pointer;
-}
-
+.btt-link,
 .update-link,
 .remove-item {
     cursor: pointer;
 }
 
-/* --------------------------------------- Bootstrap Toasts */
+/* ------------------------------- bootstrap toasts */
 
 .message-container {
     position: fixed;
     top: 72px;
     right: 15px;
-    z-index: 99999;
+    z-index: 99999999999;
 }
 
 .custom-toast {
@@ -115,23 +119,21 @@ a.category-badge >span.badge:hover {
     height: 2px;
 }
 
-/* from CSS.tricks.com: https://css-tricks.com/snippets/css/css-triangle */
-
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
-    width: 0;
-    height: 0;
+    width: 0; 
+    height: 0; 
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
+    border-right: 4px solid transparent; 
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
     right: 36px;
 }
 
-/* Convenience classes - colours copied from Bootstrap */
-
+/* Convenience classes - colors copied from Bootstrap */
 .arrow-primary {
-    border-bottom-color: #0077bf !important;
+    border-bottom-color: #007bff !important;
 }
 
 .arrow-secondary {
@@ -162,30 +164,28 @@ a.category-badge >span.badge:hover {
     border-bottom-color: #343a40 !important;
 }
 
-
 .bag-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-/* ----------------------------------------Media Queries */
+/* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
-
 @media (min-width: 1200px) {
-    .container {
-        max-width: 80%;
-    }
+  .container {
+    max-width: 80%;
+  }
 }
 
-/* fixed top nav bar only on medium and up */
+/* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
-        left: 0;
         right: 0;
+        left: 0;
         z-index: 1030;
     }
 
@@ -194,3 +194,13 @@ a.category-badge >span.badge:hover {
     }
 }
 
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+}
